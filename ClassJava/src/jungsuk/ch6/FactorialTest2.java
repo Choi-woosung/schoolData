@@ -1,7 +1,7 @@
 package jungsuk.ch6;
 
 public class FactorialTest2 {
-	static double factorial (int n) {
+	static long factorial (int n) {
 		if(n <= 0 || n > 20) {
 			return -1;
 		}
@@ -13,10 +13,17 @@ public class FactorialTest2 {
 	
 	public static void main(String[] args) {
 		int n = 21;
-		double result = 0l;
+		long result = 0l;
 		
 		for(int i = 1; i <= n; i++) {
+			result = factorial(i);
 			
+			if(result == -1) {
+				System.out.println("유효하지 않은 값입니다. (0 < n <= 20) : " + n);
+				break;
+			}
+			
+			System.out.println(i + "!" + " = " + result);
 		}
 	}
 }
